@@ -1,0 +1,31 @@
+
+<div class="container" *ngIf="educac">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="centro">Centro</label>
+                    <input type="text" class="form-control" id="centro" name="centro"
+                    [(ngModel)]="educac.centro" required>
+                </div>
+                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo"
+                    [(ngModel)]="educac.titulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="anio_ingreso">Año Ingreso</label>
+                    <input type="text" class="form-control" id="anio_ingreso" name="anio_ingreso"
+                    [(ngModel)]="educac.anio_ingreso" required>
+                </div>
+                <div class="form-group">
+                    <label for="anio_egreso">Año Egreso</label>
+                    <input type="text" class="form-control" id="anio_egreso" name="anio_egreso"
+                    [(ngModel)]="educac.anio_egreso" required>
+                </div>
+
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
