@@ -12,12 +12,11 @@ export class EstudiosService {
 
   estudiosURL = "http://localhost:8080/estudios/" //esta url es la del backend (Spring Boot)
 
-  public detalle(id: number): Observable<Estudio> {
+  public detalle(id: number): Observable<Estudio>{
     return this.http.get<Estudio>(this.estudiosURL + `detalle/${id}`);
   }
 
-  public guardar(educacion: Estudio): Observable<any> {  //ver el ': Observable<any>'
-    //this.http.post<any>(this.estudiosURL + 'agregar', educacion)
+  public guardar(educacion: Estudio): Observable<any>{  //ver el ': Observable<any>'
     return this.http.post<any>(this.estudiosURL + 'agregar', educacion);
   }
 
